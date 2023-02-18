@@ -2,7 +2,9 @@
 import random
 from wordlist import word_list 
 from stages import logo, stages
-import os
+
+
+
 
 
 chosen_word = random.choice(word_list)
@@ -24,11 +26,12 @@ for _ in range(word_length):
 while not end_of_game:
     
     guess = input("Guess a letter: ").lower()
-    clear = lambda: os.system('cls')
-    clear()
+    
     if guess in guessed:
+        print("\033[H\033[J", end="")
         print(f"You have already guessed letter: {guess}")
     else:
+        print("\033[H\033[J", end="")
         guessed += guess
 
         
